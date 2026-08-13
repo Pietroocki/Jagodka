@@ -43,7 +43,7 @@ h1 {
 p {
     font-size: 18px;
     line-height: 1.7;
-    color: #71676c;
+    color: white;
     margin: 0;
 }
 
@@ -83,3 +83,85 @@ p {
         bottom: 5%;
     }
 }
+
+.relationship-counter {
+            width: 100%;
+            max-width: 750px;
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(15px);
+        }
+
+        .relationship-counter h1 {
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+
+        .subtitle {
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 17px;
+        }
+
+        .timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .time-box {
+            padding: 25px 10px;
+
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+        }
+
+        .number {
+            display: block;
+
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .label {
+            display: block;
+            margin-top: 8px;
+
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .start-date {
+            margin-top: 30px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        @media (max-width: 650px) {
+            .relationship-counter {
+                padding: 35px 20px;
+            }
+
+            .relationship-counter h1 {
+                font-size: 28px;
+            }
+
+            .timer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .number {
+                font-size: 40px;
+            }
+        }
