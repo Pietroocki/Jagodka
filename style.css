@@ -190,9 +190,12 @@ p {
         font-size: 65px;
         right: 5%;
         bottom: 5%;
-    }
+        position: static;
+        transform: none;
+        margin-top: 25px;
+        }
     .content {
-    flex-direction: column;
+        flex-direction: column;
     }
 
     .left,
@@ -202,6 +205,9 @@ p {
 
     .left img {
         height: auto;
+    }
+    .start {
+    flex-direction: column;
     }
 }
 
