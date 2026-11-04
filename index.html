@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dla Ciebie :)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="start">
+        <div class="content">
+            <div class="left">
+                <div class="photo-row">
+                    <button id="prev" aria-label="Poprzednie zdjęcie">❮</button>
+                    <img src="img/Funny.jpg" class="active" alt="Podoba mi się">
+                    <img src="img/Mata.jpg" alt="Koncercik Maty">
+                    <img src="img/Croatia.jpg" alt="Chorwacja razem">
+                    <img src="img/Sobel.jpg" alt="Sobelek">
+                    <img src="img/Pumpkin.jpg" alt="Pumpkiniarze">
+                    <img src="img/Valentines.jpg" alt="Walentynki">
+                    <button id="next" aria-label="Następne zdjęcie">❯</button>
+                </div>
+                    <div class="photo-description">
+                        <h3 id="photo-description"></h3>
+                        <p id="photo-paragraph"></p>
+                    </div>
+            </div>
+            <div class="right">
+                <h1>Hej ❤️</h1>
+
+                <p>
+                Kocham Cię BARDZO 
+                </p>
+            
+            
+                    <div class="line">
+                    </div>
+                        <h1>Jesteśmy razem już</h1>
+                        <p>Każda sekunda z tobą jest najlepszą sekundą w życiu</p>
+            
+                        <div class="timer">
+                            <div class="time-box">
+                            <span class="number" id="days">0</span>
+                            <span class="label">dni</span>
+                        </div>
+
+                <div class="time-box">
+                    <span class="number" id="hours">0</span>
+                    <span class="label">godzin</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="number" id="minutes">0</span>
+                    <span class="label">minut</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="number" id="seconds">0</span>
+                    <span class="label">sekund</span>
+                </div>
+            </div>
+
+            <p class="start-date">
+                Od 10 stycznia 2026 roku
+            </p>
+
+            <p class="small">
+                wracaj tu co jakiś czas :)
+            </p>
+        </div>
+
+        <div class="heart" id="open-letter">♡ <span class="heart-caption">Kliknij, mam coś dla Ciebie</span></div>
+    </main>
+    <dialog id="love-letter">
+        <h2><button id="close-letter" aria-label="Zamknij list">×</button><br>Myszko najpiękniejsza ❤️</h2>
+        <p>Nigdy nie zapomnę momentu w którym się w tobie zakochałem. Siedzieliśmy sobie z tyłu w aucie na parkingu i cię przytulałem i w momencie w którym poleciała mi łza zdałem sobie sprawę, że nigdy nie czułem się tak bezpiecznie.
+            Nie czułem się tak bezpiecznie ani spokojnie nigdy w życiu jak czuje się z tobą. Czekaliśmy razem na nową nutkę sobla "ZA KOGO MNIE MASZ!?" dlatego bardzo mi się to z tobą kojarzy.
+        </p>
+        <p>
+            Najwspanialsze przeżycia to właśnie te z tobą. Niezależnie od tego co się dzieje chce wracać tylko do ciebie, do nikogo innego. Chcę pamiętać o tobie wszystko łącznie z najmniejszymi. 
+            Nie lubisz festiwali, Nie  lubisz od razu rozmawiać, będę się starał to szanować i nie cisnąć Cię. Kochasz colke zero, Kochasz jamniczki, Bardzo nie lubisz pomarańczowego, Fioletowego, zielonego (Jeżeli chodzi o kwiatki), kanapeczka to chleb, masełko, szyneczka i pomidor.
+        </p>
+        <p>
+            Dzięki tobie dni które się liczą na stronie są najlepszymi dniami w moim życiu, i ten licznik nie może się nigdy zatrzymać, nie pozwolę na to. Nie tylko liczy ile jesteśmy razem, ale również ile trwają najlepsze chwile mojego życia i nie mogą się skończyć bo są z tobą. 
+            Wiem, że czasami Cię denerwuje albo nie zachowuje się tak jakbyś tego chciała, ale staram się i nie zamierzam przestawać. Czasami mogę nie dawać tego co chcesz, lecz mam nadzieję, że jak tak będzie to w porę się ogarnę i będę traktował moją księżniczkę piękną tak jak na to zasługuje.
+        </p>
+        <p>Jest to dla mnie niesamowite ile razem robimy te wyjazdy, wakacje, koncerty i wiele więcej. Jest tego troche, ale chce więcej tego tak jak więcej Ciebie. Podziwiam w tobie to, że chcesz się zmieniać. Widać to po tym jak kupujesz coraz mniej rzeczy, bardziej myślisz nad zakupami.
+            Dumny jestem też z tego, że zaczynasz widzieć swoje piękno, które jest ogromne. Jestem naprawdę dumny z tego, że mimo wszystkiego co się dzieje oraz tego o czym nie chcesz rozmawiać nadal dajesz sobie radę bo jesteś bardzo silna, ale chcę żebyś wiedziała, że mimo twojej siły ja jestem dla Ciebie i bardzo chcę być twoim wsparciem w każdej sytuacji. Nie musisz zawsze być przy mnie silna i ze wszystkim radzić sobie sama ❤️</p>
+    </dialog>
+<script>
+    const relationshipStart = new Date("2026-01-10T21:00:00");
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+
+    function updateRelationshipCounter(){
+        const now = new Date();
+
+        const difference = now - relationshipStart;
+
+        if (difference < 0){
+            daysElement.textContent = "0";
+            hoursElement.textContent = "0";
+            minutesElement.textContent = "0";
+            secondsElement.textContent = "0";
+            return;
+        }
+
+            const totalSeconds = Math.floor(difference / 1000);
+
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            daysElement.textContent = days;
+            hoursElement.textContent = String(hours).padStart(2, "0");
+            minutesElement.textContent = String(minutes).padStart(2, "0");
+            secondsElement.textContent = String(seconds).padStart(2, "0");
+
+    }
+
+        updateRelationshipCounter();
+
+        setInterval(updateRelationshipCounter, 1000);
+
+        const photos = document.querySelectorAll(".left img");
+        const descriptions = ["Fajna focia", "Koncercik Maty", "Jeziora plitvickie Chorwacja", 
+                            "Koncert Sobelka", "Dyniarze", "Walentynki Kraków"];
+        const descriptionElement = document.getElementById("photo-description");
+        const paragraph = ["Kocham to, że możemy być przy sobie sobą i nie wstydzić się niczego, przynajmniej tak czuje się ja. Super jest to, że jesteśmy dla siebie partnerami, najlepszymi przyjaciółmi, terapeutami oraz nawet dziwni bez strachu o ocenę.", 
+                            "Cudowny wspólny czas, mimo wszystkim przeciwności. Daliśmy sobie radę ze wszystkim i dzięki temu jest to przygoda nie do zapomnienia. Super koncert, ale bardziej podobał mi się wspólnie i tak cudownie spędzony czas z TOBĄ.",
+                            "Piękne miejsce, oraz pierwsze wspólne wakacje. Co prawda nie byliśmy w pełni sił podczas wyjazdu ale uważam, że i tak było super i musi być więcej takich odpoczynkowych wakacji. Cudowny czas z cudowną dziewczyną.",
+                            "Wiem, że nie lubisz festiwali, ale przed myślałem, że Sobelek to nie będziesz zwracała na to uwagi, według mnie było zajebiście mimo, że przyjechaliśmy tak bardzo za wcześnie. Dzięki temu wiem gdzie będziemy jeździć co roku :)",
+                            "OOO pumpkiniarzeeee. Pamiętałem, że kochasz takie miejsca i nigdy nie zapomnę. Boli mnie jedynie to, że zabrałem Cię tak późno i na taką małą farmę. Będziemy sobie jeździć na większe farmy żeby czuć Jesieniarski moodzik <3",
+                            "Moje pierwsze walentynki drugą osobą. I to jeszcze z taką cudowną i piękną dziewczyną. Bardzo mi się podobało i super pomysł z tym krakowem było pięknie (najpiękniejsza byłaś I JESTEŚ ty oczywiście). Wszystko w śniegu, moje wymarzone walentynki. Z moją wymarzoną dziewczyną."]
+        const paragraphElement = document.getElementById("photo-paragraph");
+        let currentPhoto = 0;
+        function changePhoto(direction) {
+            photos[currentPhoto].classList.remove("active");
+            currentPhoto = currentPhoto + direction;
+                if (currentPhoto >= photos.length) {
+                    currentPhoto = 0;
+                }
+                if (currentPhoto < 0) {
+                    currentPhoto = photos.length - 1;
+                }
+            photos[currentPhoto].classList.add("active");
+
+            descriptionElement.textContent = descriptions[currentPhoto];
+            paragraphElement.textContent = paragraph[currentPhoto];
+            paragraphElement.classList.remove("open");
+        }
+
+        descriptionElement.textContent = descriptions[currentPhoto];
+        paragraphElement.textContent = paragraph[currentPhoto];
+
+        descriptionElement.addEventListener("click", function () {
+            paragraphElement.classList.toggle("open");
+        });
+
+        document.getElementById("next").addEventListener("click", function () {
+            changePhoto(1);
+        });
+        document.getElementById("prev").addEventListener("click", function () {
+            changePhoto(-1);
+        });
+
+        const letter = document.getElementById("love-letter");
+        const openLetter = document.getElementById("open-letter");
+        const closeLetter = document.getElementById("close-letter");
+        openLetter.addEventListener("click", function (){
+            letter.showModal();
+        })
+        closeLetter.addEventListener("click", function (){
+            letter.close();
+        })
+
+</script>
+</body>
+</html>
