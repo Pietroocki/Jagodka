@@ -191,6 +191,18 @@ p {
         right: 5%;
         bottom: 5%;
     }
+    .content {
+    flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left img {
+        height: auto;
+    }
 }
 
 .relationship-counter {
